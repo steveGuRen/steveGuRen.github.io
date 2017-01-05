@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="api">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="required/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="required/css/simple-sidebar.css" rel="stylesheet">
+    <!-- codemirror and showdown -->
+    <link href="required/module/codemirror/codemirror.css" rel="stylesheet">
+    <link href="required/module/codemirror/foundation.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper" ng-controller="apiController">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       {{menuName}}
+                    </a>
+                </li>
+                <li ng-repeat="menu in menuList">
+                    <a href="{{menu.href}}" ng-click="getContent($event, menu.href)">{{menu.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12">
+		                    <textarea id="text-area" rows="6" cols="40" style="display: none"></textarea>
+		                    <div id="show-markdown" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="required/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="required/js/bootstrap.min.js"></script>
+    <script src="required/js/angular.min.js"></script>
+    
+    <!-- codemirror js and showdown.js-->
+    <script src="required/module/codemirror/codemirror.js"></script>
+    <script src="required/module/codemirror/markdown.js"></script>
+    <script src="required/module/codemirror/showdown.js"></script>
+
+    <!-- app.js -->
+    <script src="required/code/app.js"></script>
+
+    <!-- Menu Toggle Script 
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    -->
+    
+</body>
+
+</html>

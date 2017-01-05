@@ -1,0 +1,51 @@
+a:hover, a:focus {
+    color: rgb(0, 120, 160);
+}
+a:hover {
+    cursor: pointer;
+}
+a {
+    color: rgb(0, 140, 186);
+    line-height: inherit;
+    text-decoration: none;
+}
+/* 全局样式 */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+}
+
+h3 {
+    border-bottom: 1px solid #ddd;
+}
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background-color: #f8f8f8;
+    border: 1px solid #dfdfdf;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
+pre code {
+    /* background-color: transparent; */
+    border: 0;
+    padding: 0;
+}
