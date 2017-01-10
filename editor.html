@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="required/module/codemirror/codemirror.css">
+<link rel="stylesheet" href="required/code/editor/editor.css">
+<link rel="stylesheet" href="required/code/editor/style.css">
+<script src="required/js/jquery.js"></script>
+<script src="required/module/codemirror/codemirror.js"></script>
+<!-- <script src="${base}/lib/javascript.js"></script> -->
+<script src="required/module/codemirror/markdown.js"></script>
+<script src="required/module/codemirror/showdown.js"></script>
+</head>
+<body>
+	<div class="top">
+		<div class="button-a" onclick="document.getElementById('editor-up').style.display='none'">隐藏编辑器</div>
+		<div class="button-a" onclick="document.getElementById('editor-up').style.display='block'">显示编辑器</div>
+		<div class="button-a" onclick="insertTextAtCursor()">插入图片</div>
+		<!-- <div class="button-a" onclick="test()">获取数据</div> -->
+		<div class="button-a" onclick="getMD()">下载md</div>
+		<div class="button-a" onclick="getHtml()">下载html</div>
+		<div class="button-a" onclick="indent()">缩进</div>
+	</div>
+	<div id="editor-up" class="editor-up">
+		<textarea id="text-area" rows="6" cols="40" style="display: none"></textarea>
+	</div>
+	<div  class="editor-down">
+		<div id="show-markdown" class="preview"></div>
+	</div>
+	<script src="required/code/editor/editor.js"></script>
+</body>
+</html>
