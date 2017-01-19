@@ -2,7 +2,7 @@
     "menuName":"API project",
     "menuList":[
                 {"href":"api-md/gitpage.md", "name":"GitPages使用"},
-                {"href":"api-md/test2.img", "name":"人脸识别"},
+                {"href":"api-md/test2.img", "name":"人脸识别"},                
                 {"href":"api-md/test.md", "name":"test"},
                 {"href":"api-md/tomcat8.md", "name":"tomcat"},
                 {"href":"api-md/datastruct.md", "name":"去除数组中重复数字"}
