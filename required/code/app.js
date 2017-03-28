@@ -48,9 +48,9 @@ angular.module('api', ['services'])
     .config(['$locationProvider', function ($locationProvider) {        $locationProvider.html5Mode(true);    }])
     .controller('apiController', function ($scope, $location, apiService) {
         var menuList = [
-            { href: "/test1", name: "api1" },
-            { href: "/test2", name: "api2" },
-            { href: "/test3", name: "api3" }
+            // { href: "/test1", name: "api1" },
+            // { href: "/test2", name: "api2" },
+            // { href: "/test3", name: "api3" }
         ]
         $scope.menuList = menuList;
         apiService.getMenu().then(function (data) {
