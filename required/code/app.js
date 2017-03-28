@@ -1,6 +1,7 @@
 //var contextPath = "http://jiejia.jeocloud.com:8081/propertyBackend";
 angular.module('services', [])
     .factory('apiService', function ($http) {
+        var cache = new JcCache();
         var getMenu = function () {
             var req = {
                 method: 'GET',
@@ -28,24 +29,30 @@ angular.module('services', [])
                 "contentType": false,
                 "mimeType": "multipart/form-data"
             }
-
-            $.ajax(settings).done(function (response) {
-                var html = converter.makeHtml(response);
+            if (cache.isExist(url)) {
+                var html = converter.makeHtml(cache.get(url));
                 var showMarkdown = document.getElementById("show-markdown");
                 showMarkdown.innerHTML = html;
-            });
+            } else {
+                $.ajax(settings).done(function (response) {
+                    cache.set(url, response);
+                    var html = converter.makeHtml(response);
+                    var showMarkdown = document.getElementById("show-markdown");
+                    showMarkdown.innerHTML = html;
+                });
+            }
         }
         return {
             getMenu: function () {
                 return getMenu();
             },
-            getMarkdown: function(url) {
+            getMarkdown: function (url) {
                 return getMarkdown(url);
             }
         }
     });
 angular.module('api', ['services'])
-    .config(['$locationProvider', function ($locationProvider) {        $locationProvider.html5Mode(true);    }])
+    .config(['$locationProvider', function ($locationProvider) { $locationProvider.html5Mode(true); }])
     .controller('apiController', function ($scope, $location, apiService) {
         var menuList = [
             // { href: "/test1", name: "api1" },
@@ -60,6 +67,6 @@ angular.module('api', ['services'])
         })
         $scope.getContent = function ($event, url) {
             $event.preventDefault();
-             apiService.getMarkdown(url);
+            apiService.getMarkdown(url);
         }
     })
