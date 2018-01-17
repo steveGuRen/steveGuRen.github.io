@@ -1,6 +1,7 @@
 {
     "menuName":"API project",
     "menuList":[
+                {"href":"api-md/work-doc.md", "name":"代码生成"},
                 {"href":"api-md/gitpage.md", "name":"GitPages使用"},
                 {"href":"api-md/test2.img", "name":"人脸识别"},
                 {"href":"api-md/test.md", "name":"test"},
